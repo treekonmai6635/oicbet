@@ -16,15 +16,24 @@ export const sendEmail = async({email, emailType, userId}:any) => {
                 {forgotPasswordToken: hashedToken, forgotPasswordTokenExpiry: Date.now() + 3600000})
         }
 
+        // var transport = nodemailer.createTransport({
+        //     host: "sandbox.smtp.mailtrap.io",
+        //     port: 2525,
+        //     auth: {
+        //       user: "3fd364695517df",
+        //       pass: "7383d58fd399cf"
+        //       //TODO: add these credentials to .env file
+        //     }
+        //   });
+
         var transport = nodemailer.createTransport({
-            host: "sandbox.smtp.mailtrap.io",
-            port: 2525,
-            auth: {
-              user: "3fd364695517df",
-              pass: "7383d58fd399cf"
-              //TODO: add these credentials to .env file
-            }
-          });
+        host: "sandbox.smtp.mailtrap.io",
+        port: 2525,
+        auth: {
+            user: "711736cdeeceaf",
+            pass: "f4efb3a4354c19"
+        }
+        });
 
 
         const mailOptions = {
